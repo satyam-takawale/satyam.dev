@@ -1,0 +1,102 @@
+import 'package:flutter/material.dart';
+import 'package:portfolioapp/constants/constants.dart';
+import 'package:portfolioapp/theme/app_textstyles.dart';
+import 'package:portfolioapp/view/common_components/common_components.dart';
+
+class LandingPage extends StatefulWidget {
+  const LandingPage({Key? key}) : super(key: key);
+
+  @override
+  State<LandingPage> createState() => _LandingPageState();
+}
+
+class _LandingPageState extends State<LandingPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color.fromRGBO(17, 17, 17, 1),
+      body: SizedBox(
+        width: double.infinity,
+        child: Scrollbar(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Header(menuTextStyle: AppTextStyles.menuTextStyle),
+                Bio(
+                    nameTextStyle: AppTextStyles.nameTextStyle,
+                    nameTextStyleForWeb: AppTextStyles.nameTextStyleForWeb,
+                    nameSubtitleTextStyle: AppTextStyles.nameSubtitleTextStyle,
+                    companyNameTextStyle: AppTextStyles.companyNameTextStyle,
+                    footerTextStyle: AppTextStyles.footerTextStyle),
+                SizedBox(
+                  width: 672,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal:
+                            MediaQuery.of(context).size.width > 672 ? 0 : 22),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SectionHeader(
+                            sectionTitle: "Work Experience",
+                            sectionSubTitle: "My work experience so far.",
+                            sectionTitleTextStyle:
+                                AppTextStyles.sectionTitleTextStyle,
+                            nameSubtitleTextStyle:
+                                AppTextStyles.nameSubtitleTextStyle,
+                            sectionTitleTextStyleForWeb:
+                                AppTextStyles.sectionTitleTextStyleForWeb),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        ExperienceCard(
+                          experiencePositionTextStyle:
+                              AppTextStyles.experiencePositionTextStyle,
+                          experienceCompanyNameTextStyle:
+                              AppTextStyles.experienceCompanyNameTextStyle,
+                          experienceDescriptionTextStyle:
+                              AppTextStyles.experienceDescriptionTextStyle,
+                          companyLogo: AssetName.biencapsLogo,
+                          companyName: AppStrings.currentCompany,
+                          description:
+                              'I work as a Software Developer at Biencaps Systems Pvt Ltd. Biencaps enables you to invest in ideas rather than in stocks based on market capitalisation.',
+                          duration: 'Jan 2020 - Present • Full time',
+                          role: 'Software Developer',
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        ExperienceCard(
+                          experiencePositionTextStyle:
+                              AppTextStyles.experiencePositionTextStyle,
+                          experienceCompanyNameTextStyle:
+                              AppTextStyles.experienceCompanyNameTextStyle,
+                          experienceDescriptionTextStyle:
+                              AppTextStyles.experienceDescriptionTextStyle,
+                          companyLogo: AssetName.biencapsLogo,
+                          companyName: AppStrings.currentCompany,
+                          description:
+                              'I work on an Anonymous Social Media Platform for Corporate people to share their company experiences. I picked up and learnt Flutter from ground up during my internship.',
+                          duration: 'June 2019 - Jan 2020 • 6 months',
+                          role: 'Software Development Intern',
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Footer(
+                  footerTextStyle: AppTextStyles.footerTextStyle,
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
