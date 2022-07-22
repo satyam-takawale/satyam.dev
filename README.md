@@ -14,3 +14,7 @@
 - Home page : bio section : responsive
 - Home page : Experience section : ui added
 - Home Page : Experience section : responsive
+
+## 23-07-2022 : Projects UI, Responsive
+- Home Page : Project section : ui added
+- Home Page : Project section : responsive
