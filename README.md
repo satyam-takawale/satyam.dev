@@ -18,3 +18,7 @@
 ## 23-07-2022 : Projects UI, Responsive
 - Home Page : Project section : ui added
 - Home Page : Project section : responsive
+
+## 23-07-2022 : Hosting
+- Firebase : Firebase hosting Configuration
+
